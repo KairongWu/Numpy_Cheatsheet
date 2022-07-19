@@ -403,8 +403,9 @@ print("array_47_load_txt: ",array_47_load_txt)
 ########## Importing and exporting a CSV ##########
 ########## 导入和导出 CSV  ##########
 print("="*30)
-# import pandas as pd
-# array_48 = pd.
+import pandas as pd
+array_48 = pd.read_csv('new_file.csv',header=0).values
+print("array_48: ",array_48)
 # # If all of your columns are the same type:
 # x = pd.read_csv('music.csv', header=0).values
 # print(x)
@@ -421,6 +422,15 @@ print("="*30)
 #  ['Miles Davis' 48000000]
 #  ['SIA' 74000000]]
 
+array_49 = np.array([[-2.58289208,  0.43014843, -1.24082018, 1.59572603],
+              [ 0.99027828, 1.17150989,  0.94125714, -0.14692469],
+              [ 0.76989341,  0.81299683, -0.95068423, 0.11769564],
+              [ 0.20484034,  0.34784527,  1.96979195, 0.51992837]])
+array_49_df = pd.DataFrame(array_49)
+print("array_49_df: ",array_49_df)
+array_49_df.to_csv("pd.csv")
+array_49_pd_csv_read = pd.read_csv('pd.csv')
+np.savetxt('np.csv', array_49, fmt='%.2f', delimiter=',', header='1,  2,  3,  4')
 
 ########## Plotting arrays with Matplotlib ##########
 ########## 使用 Matplotlib 绘制数组 ##########
